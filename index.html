@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GForce Crypto Investing</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="../js/components/Navigation.js"></script>
+    <style>
+        [v-cloak] { display: none; }
+        .feature-box {
+            transform: perspective(1000px) rotateX(10deg);
+            transition: transform 0.3s ease-in-out;
+        }
+        .feature-box:hover {
+            transform: perspective(1000px) rotateX(0deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="app" v-cloak>
+        <site-navigation></site-navigation>
+
+        <main class="container mx-auto mt-24 p-4">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold mb-6 text-blue-600">GForce Crypto Investing</h1>
+                <p class="text-2xl mb-8 text-gray-700">Empowering Your Crypto Investment Journey with Advanced Strategies</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="feature-box bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4 text-blue-500">GFCI Token</h2>
+                    <p class="mb-4">Passive exposure to our advanced crypto strategies. Invest effortlessly with liquidity and full ownership.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Advanced portfolio management and risk optimization</li>
+                        <li>Diverse exposure to top crypto assets through a single token</li>
+                        <li>Passive investment with real-time performance tracking</li>
+                        <li>Liquidity and full ownership of tokens</li>
+                        <li>Backtested performance vs. buy-and-hold strategies</li>
+                    </ul>
+                    <a href="gfci_coin.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Learn More About GFCI
+                    </a>
+                </div>
+                <div class="feature-box bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4 text-green-500">Investing System</h2>
+                    <p class="mb-4">Our cutting-edge system uses advanced algorithms to optimize your crypto investments.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Dual mode strategy: Maximum Profit and Minimum Drawdown</li>
+                        <li>Real-time market analysis and asset selection</li>
+                        <li>Automated portfolio management and risk optimization</li>
+                        <li>Comprehensive tools including Dip Detector and Volatility Detection</li>
+                        <li>Access to Telegram community with daily analysis and explanations</li>
+                    </ul>
+                    <a href="investing_system.html" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Explore Our System
+                    </a>
+                </div>
+            </div>
+            
+            <div v-if="showGFCIPage">
+                <gfci-page></gfci-page>
+                <div class="text-center mt-8">
+                    <a href="#" @click.prevent="showGFCIPage = false" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+
+            <div v-if="showInvestingSystemPage">
+                <investing-system-page></investing-system-page>
+                <div class="text-center mt-8">
+                    <a href="#" @click.prevent="showInvestingSystemPage = false" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+            
+            <div v-if="!showGFCIPage && !showInvestingSystemPage">
+                <div class="bg-gray-100 p-8 rounded-lg mb-12">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Why Choose GForce Crypto Investing?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <span class="text-4xl mb-2 block">📈</span>
+                            <h3 class="text-xl font-bold mb-2">Dual Mode Strategy</h3>
+                            <p>Choose between Maximum Profit mode for higher potential returns or Minimum Drawdown mode for balanced risk management.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <span class="text-4xl mb-2 block">🛡️</span>
+                            <h3 class="text-xl font-bold mb-2">Adaptive Asset Allocation</h3>
+                            <p>Our system dynamically allocates funds to the dominant assets based on market conditions and selected mode.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <span class="text-4xl mb-2 block">🚀</span>
+                            <h3 class="text-xl font-bold mb-2">Proven Market Outperformance</h3>
+                            <p>Historically, our system has consistently outperformed market benchmarks, and we're committed to maintaining this edge.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Ready to Revolutionize Your Crypto Investments?</h2>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://dhedge.org/vault/0x2af1ace80e797d77c765e76c4e2916cfb1dba9be" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+                            Invest in GFCI Token
+                        </a>
+                        <a href="https://whop.com/gforce-crypto-investing/" target="_blank" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+                            Get the Investing System
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-800 text-white p-4 mt-8">
+            <div class="container mx-auto text-center">
+                &copy; 2023 GForce Crypto Investing. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Update the Navigation component to include "Investing" in the name
+        Vue.component('site-navigation', {
+            data: function() {
+                return {
+                    isDropdownOpen: false
+                }
+            },
+            template: `
+                <nav class="bg-blue-600 p-4 fixed top-0 left-0 right-0 z-10">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <a href="index.html" class="text-white text-2xl font-bold">GForce Crypto Investing</a>
+                        <div class="relative">
+                            <button @click="isDropdownOpen = !isDropdownOpen" class="text-white focus:outline-none">
+                                Menu
+                                <svg class="h-5 w-5 inline-block ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div v-if="isDropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+                                <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Home</a>
+                                <a href="gfci_coin.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">GFCI Token</a>
+                                <a href="investing_system.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Investing System</a>
+                                <a href="resources.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            `
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                showGFCIPage: false,
+                showInvestingSystemPage: false
+            }
+        });
+    </script>
+</body>
+</html>

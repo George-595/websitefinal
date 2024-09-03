@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFCI Coin - GForce Crypto Investing</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="../js/components/Navigation.js"></script>
+    <style>
+        [v-cloak] { display: none; }
+        .fixed-bottom-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="app" v-cloak>
+        <site-navigation></site-navigation>
+
+        <main class="container mx-auto mt-24 p-4 mb-16">
+            <h1 class="text-4xl font-bold mb-6 text-blue-600">GFCI Token</h1>
+            <p class="text-xl mb-6">The GFCI Token represents a revolutionary approach to crypto investing, offering passive exposure to our advanced strategies.</p>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-4">What is GFCI?</h2>
+                <p class="mb-4">The GFCI token is a passive investment vehicle tied to the GForce Crypto Investing system. By holding GFCI, investors automatically benefit from the system's trading outputs without needing to actively manage their investments.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h2 class="text-2xl font-bold mb-4">How It Works</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Powered by the GForce Investing System's proprietary algorithms</li>
+                    <li>Self-optimizing portfolio management with real-time risk management</li>
+                    <li>Backtested performance vs. buy-and-hold strategies</li>
+                    <li>Diverse exposure to top crypto assets through a single token</li>
+                    <li>Passive Exposure: Track performance without active management</li>
+                    <li>Liquidity: Ability to sell tokens at any time</li>
+                    <li>Ownership: Retain full control while benefiting from optimized trading</li>
+                    <li>Effortless participation in sophisticated crypto strategies</li>
+                    <li>Real-time optimization without manual intervention</li>
+                </ul>
+                <p>It's a seamless way to participate in advanced crypto strategies while maintaining control and flexibility.</p>
+            </div>
+        </main>
+
+        <div class="fixed-bottom-banner bg-blue-500 text-white p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <span class="text-lg font-bold">Ready to invest in GFCI Token?</span>
+                <a href="https://dhedge.org/vault/0x2af1ace80e797d77c765e76c4e2916cfb1dba9be" target="_blank" class="bg-white text-blue-500 hover:bg-blue-100 font-bold py-2 px-4 rounded-lg text-lg">
+                    Buy GFCI Token
+                </a>
+            </div>
+        </div>
+
+        <footer class="bg-gray-800 text-white p-4 mt-8">
+            <div class="container mx-auto text-center">
+                &copy; 2023 GForce Crypto Investing. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        Vue.component('site-navigation', {
+            data: function() {
+                return {
+                    isDropdownOpen: false
+                }
+            },
+            template: `
+                <nav class="bg-blue-600 p-4 fixed top-0 left-0 right-0 z-10">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <a href="index.html" class="text-white text-2xl font-bold">GForce Crypto Investing</a>
+                        <div class="relative">
+                            <button @click="isDropdownOpen = !isDropdownOpen" class="text-white focus:outline-none">
+                                Menu
+                                <svg class="h-5 w-5 inline-block ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div v-if="isDropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+                                <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Home</a>
+                                <a href="gfci_coin.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">GFCI Token</a>
+                                <a href="investing_system.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Investing System</a>
+                                <a href="resources.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            `
+        });
+
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GForce Crypto Investing - Resources</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="../js/components/Navigation.js"></script>
+    <style>
+        [v-cloak] { display: none; }
+        .popup-3d {
+            transform: perspective(1000px) rotateX(10deg);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .popup-3d.active {
+            transform: perspective(1000px) rotateX(0deg);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="app" v-cloak>
+        <site-navigation></site-navigation>
+
+        <main class="container mx-auto mt-24 p-4">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold mb-6 text-blue-600">Resources</h1>
+                <p class="text-2xl mb-8 text-gray-700">Valuable information to support your crypto investment journey</p>
+                <button @click="showPopup = true" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Show Beginner's Guide
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-4 text-yellow-500">Legal Resources</h2>
+                    <ul class="list-disc list-inside mb-4">
+                        <li><a href="Terms of Service.html" class="text-yellow-600 hover:underline">Terms of Service</a></li>
+                        <li><a href="Privacy Policy.html" class="text-yellow-600 hover:underline">Privacy Policy</a></li>
+                        <li><a href="Refund Policy.html" class="text-yellow-600 hover:underline">Refund Policy</a></li>
+                        <li><a href="EULA.html" class="text-yellow-600 hover:underline">End User License Agreement (EULA)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- 3D Popup -->
+        <div class="fixed inset-0 flex items-center justify-center z-50 overlay" :class="{ 'active': showPopup }">
+            <div class="bg-white p-8 rounded-lg shadow-2xl popup-3d max-w-4xl w-full mx-4" :class="{ 'active': showPopup }">
+                <h2 class="text-3xl font-bold mb-4 text-blue-600">Welcome to the Beginner's Guide of GForce Crypto Investing!</h2>
+                <p class="mb-4">Embarking on your cryptocurrency journey might seem daunting, but we're here to make it as seamless as possible. To start trading and investing in the exciting world of crypto, you'll need a few things:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li>🏦 Access to a Centralised Exchange: Sign up with a reputable centralised exchange like Kraken, Binance or Coinbase.</li>
+                    <li>🦊 MetaMask Setup: Create and configure a MetaMask wallet.</li>
+                    <li>📈 TradingView Account: Join TradingView for real-time charts and market insights.</li>
+                </ul>
+                <h3 class="text-2xl font-bold mb-2">🚀 Getting Started Steps:</h3>
+                <ol class="list-decimal list-inside mb-4">
+                    <li><strong>Exchange Account:</strong> Visit your chosen exchange's website, sign up, and secure your account.</li>
+                    <li><strong>MetaMask:</strong> Download the MetaMask wallet and follow the setup instructions.</li>
+                    <li><strong>TradingView:</strong> Sign up for a TradingView account to explore charts and market trends.</li>
+                </ol>
+                <h3 class="text-2xl font-bold mb-2">✨ Pro Tips:</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Security First:</strong> Use strong passwords and enable two-factor authentication.</li>
+                    <li><strong>Learn and Practice:</strong> Use demo accounts to practice trading without risk.</li>
+                    <li><strong>Ask Questions:</strong> Don't hesitate to seek help from our community.</li>
+                </ul>
+                <p class="mb-4">Remember, the world of cryptocurrency is constantly evolving. Stay informed and keep learning!</p>
+                <p class="font-bold">May your portfolio prosper! 🚀</p>
+                <button @click="showPopup = false" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <footer class="bg-gray-800 text-white p-4 mt-8">
+            <div class="container mx-auto text-center">
+                &copy; 2023 GForce Crypto Investing. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        Vue.component('site-navigation', {
+            data: function() {
+                return {
+                    isDropdownOpen: false
+                }
+            },
+            template: `
+                <nav class="bg-blue-600 p-4 fixed top-0 left-0 right-0 z-10">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <a href="index.html" class="text-white text-2xl font-bold">GForce Crypto Investing</a>
+                        <div class="relative">
+                            <button @click="isDropdownOpen = !isDropdownOpen" class="text-white focus:outline-none">
+                                Menu
+                                <svg class="h-5 w-5 inline-block ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div v-if="isDropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+                                <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Home</a>
+                                <a href="gfci_coin.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">GFCI Token</a>
+                                <a href="investing_system.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Investing System</a>
+                                <a href="resources.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            `
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                showPopup: false
+            }
+        });
+    </script>
+</body>
+</html>
